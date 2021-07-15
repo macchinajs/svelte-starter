@@ -5,7 +5,8 @@
 </script>
 
 <script>
-  import { post, getPresignedPostData } from '$lib/req_utils'
+  import { goto } from "$app/navigation"
+  import { post, uploadFileToS3 } from '$lib/req_utils'
   import postValidators from '$fabo/models/Post/validation.js'
   import { getErrors } from '$lib/form_utils.js'
 
@@ -19,27 +20,30 @@
   let formInput = resetInput()
   let errorMsgs = resetInput()
   let fileinput = undefined
+  let image = undefined
 
   const onFileSelected = async e => {
-    let image = e.target.files[0];
+    image = e.target.files[0];
     let reader = new FileReader();
 
-    if (!image)
-      return
     reader.readAsDataURL(image);
     reader.onload = async e => {
       formInput.img = e.target.result
-      let res = await post('/upload/signS3', {
-        name: image.name,
-        type: image.type
-      })
-      console.log("RESs:", res)
     };
   }
 
   const handleSubmit = async () => {
     try {
-      let res = {}
+      let res = await post('/upload/signS3', {
+        name: image.name,
+        type: image.type
+      })
+
+      if (!image)
+        return
+
+      if (!res.data)
+        return
 
       const validationErrors = getErrors(formInput, postValidators)
       errorMsgs = {...errorMsgs, ...validationErrors}
@@ -49,12 +53,14 @@
           return
       }
 
-      if (!res.errors) {
-        res = await post('/post/create', {
-          title: formInput.title,
-          body: formInput.body
-        })
-      }
+      const key = res.data.fields.key
+      const file = await uploadFileToS3(res.data, image)
+
+      res = await post('/post/create', {
+        title: formInput.title,
+        image: key,
+        body: formInput.body
+      })
 
       if (res.errors) {
         let errors = res.errors
@@ -64,7 +70,7 @@
         return
       }
 
-      console.log('RES:', res)
+      goto('/')
     } catch(err) {
       console.log(err)
       alert(err.error)

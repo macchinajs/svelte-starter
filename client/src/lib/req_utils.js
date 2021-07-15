@@ -172,24 +172,3 @@ export const uploadFileToS3 = (presignedPostData, file) => {
   });
 };
 
-export const getPresignedPostData = selectedFile => {
-  return new Promise(resolve => {
-    const xhr = new XMLHttpRequest();
-
-    // Set the proper URL here.
-    const url = "https://mysite.com/api/files";
-    url = makeUrl('/upload/')
-
-    xhr.open("POST", url, true);
-    xhr.setRequestHeader("Content-Type", "application/json");
-    xhr.send(
-      JSON.stringify({
-        name: selectedFile.name,
-        type: selectedFile.type
-      })
-    );
-    xhr.onload = function() {
-      resolve(JSON.parse(this.responseText));
-    };
-  });
-};

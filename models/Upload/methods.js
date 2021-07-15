@@ -2,11 +2,11 @@ import S3 from "aws-sdk/clients/s3"
 import uniqid from "uniqid"
 import mime from "mime"
 
-export const createPresignedPost = ({ key, contentType }) => {
+export const createPresignedPost = (key, contentType) => {
   const s3 = new S3();
   const params = {
     Expires: 60,
-    Bucket: "presigned-post-data",
+    Bucket: "fpaboim-fabo",
     Conditions: [["content-length-range", 100, 2*1024*1024]], // 100Byte - 2MB
     Fields: {
       "Content-Type": contentType,
@@ -30,11 +30,12 @@ const headers = {
   "Access-Control-Allow-Credentials": true
 };
 
-export const getPresignedPostData = async (name, type, bucketkey, res) => {
-  const presignedPostData = await createPresignedPost({
-    key: `${bucketkey}_${name}`,
-    contentType: mime.getType(type)
-  });
+export const getPresignedPostData = async (ext, type, bucketkey, res) => {
+  let name = uniqid() + '.'+ ext
+  const presignedPostData = await createPresignedPost(
+    `${bucketkey}/${name}`,
+    type
+  );
 
   return res.status(200).send({data: presignedPostData})
 };
@@ -55,7 +56,8 @@ const methods = {
       }
 
       let name = body.name
-      let ext = name.split('.')[-1]
+      let namesplit = name.split('.')
+      let ext = namesplit[namesplit.length-1]
 
       return await getPresignedPostData(ext, body.type, bucketkey, res)
     } catch (e) {

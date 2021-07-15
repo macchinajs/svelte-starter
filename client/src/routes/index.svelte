@@ -9,6 +9,7 @@
 
   export async function load({ page, fetch, session, context }) {
     const res = await post('/post/find')
+    console.log('posts:', res)
 
     if (res) {
       return {
@@ -41,6 +42,7 @@
             {post.title}
           </a>
         </div>
+        <img class="h-20" src="{post.image}" alt="">
         <div class="text-sm">
           by {post.author} {dayjs(post.created).fromNow()}
         </div>

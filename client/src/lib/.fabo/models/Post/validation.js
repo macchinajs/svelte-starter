@@ -23,6 +23,11 @@ export default {
       validator: "required",
       message: "Post body is required."
   })],
+  image: [
+    validate({
+      validator: "required",
+      message: "Post image is required."
+  })],
 }
 
 
