@@ -1,0 +1,5 @@
+fabo:
+  server:
+    export: './server'
+  client:
+    export: './client/src/lib'
