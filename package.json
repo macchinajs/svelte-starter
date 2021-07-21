@@ -45,6 +45,6 @@
   "dependencies": {
     "chalk": "^4.1.1",
     "express-rate-limit": "^5.3.0",
-    "fabo": "link:../fabo"
+    "fabo": "^0.1.3"
   }
 }
