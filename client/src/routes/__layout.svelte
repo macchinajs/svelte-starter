@@ -14,7 +14,7 @@
 <main class="h-screen p-6 bg-amber-50 flex flex-col">
   <Header />
   <div class="flex flex-col items-center">
-    <div class="w-full max-w-screen-lg 2xl:max-w-screen-xl">
+    <div class="w-full max-w-screen-lg">
       <slot />
     </div>
     <Toast/>
