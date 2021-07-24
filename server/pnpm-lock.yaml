@@ -16,7 +16,7 @@ specifiers:
   lodash: ^4.17.21
   mime: ^2.5.2
   mongoose: ^5.13.2
-  mongoose-validator: ^2.1.0
+  mongoose-validator: github:fpaboim/mongoose-validator
   passport: ^0.4.1
   passport-jwt: ^4.0.0
   serverless-api-gateway-throttling: ^1.1.1
@@ -38,7 +38,7 @@ dependencies:
   jsonwebtoken: 8.5.1
   mime: 2.5.2
   mongoose: 5.13.2
-  mongoose-validator: 2.1.0
+  mongoose-validator: github.com/fpaboim/mongoose-validator/106e32de0dd7a5e70b5809cd7981d95261580139
   passport: 0.4.1
   passport-jwt: 4.0.0
   serverless-api-gateway-throttling: 1.1.1
@@ -3405,13 +3405,6 @@ packages:
       mongoose: 5.13.2
     dev: false
 
-  /mongoose-validator/2.1.0:
-    resolution: {integrity: sha512-o1oThcinMdYfuut8ld8iQv4TdEB8W6I/WIKB6lWGtHzHmxa/SRnmXg2FeLL2CO+b9vzRitVubrFTeMOr9bJ2cA==}
-    dependencies:
-      is: 3.3.0
-      validator: 10.11.0
-    dev: false
-
   /mongoose/5.13.2:
     resolution: {integrity: sha512-sBUKJGpdwZCq9102Lj6ZOaLcW4z/T4TI9aGWrNX5ZlICwChKWG4Wo5qriLImdww3H7bETPW9vYtSiADNlA4wSQ==}
     engines: {node: '>=4.0.0'}
@@ -4741,3 +4734,12 @@ packages:
       compress-commons: 4.1.1
       readable-stream: 3.6.0
     dev: true
+
+  github.com/fpaboim/mongoose-validator/106e32de0dd7a5e70b5809cd7981d95261580139:
+    resolution: {tarball: https://codeload.github.com/fpaboim/mongoose-validator/tar.gz/106e32de0dd7a5e70b5809cd7981d95261580139}
+    name: mongoose-validator
+    version: 2.1.3
+    dependencies:
+      is: 3.3.0
+      validator: 10.11.0
+    dev: false

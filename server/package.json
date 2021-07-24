@@ -26,7 +26,7 @@
     "jsonwebtoken": "^8.5.1",
     "mime": "^2.5.2",
     "mongoose": "^5.13.2",
-    "mongoose-validator": "^2.1.0",
+    "mongoose-validator": "github:fpaboim/mongoose-validator",
     "passport": "^0.4.1",
     "passport-jwt": "^4.0.0",
     "serverless-api-gateway-throttling": "^1.1.1",
