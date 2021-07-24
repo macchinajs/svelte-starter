@@ -10,10 +10,10 @@ export default {
       validator: "isLength",
       arguments: [3,500],
       message: "Title should be between {ARGS[0]} and {ARGS[1]} characters"
-    }), validate({
+      }), validate({
       validator: "required",
       message: "Title is required."
-  })],
+    })],
 }
 
 

@@ -10,24 +10,24 @@ export default {
       validator: "isLength",
       arguments: [3,120],
       message: "Title should be between {ARGS[0]} and {ARGS[1]} characters"
-    }), validate({
+      }), validate({
       validator: "required",
       message: "Title is required."
-  })],
+    })],
   body: [
     validate({
       validator: "isLength",
       arguments: [10,100000],
       message: "Post body should be between {ARGS[0]} and {ARGS[1]} characters"
-    }), validate({
+      }), validate({
       validator: "required",
       message: "Post body is required."
-  })],
+    })],
   image: [
     validate({
       validator: "required",
       message: "Post image is required."
-  })],
+    })],
 }
 
 

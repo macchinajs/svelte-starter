@@ -9,12 +9,12 @@ export default {
     validate({
       validator: "required",
       message: "Id is required"
-  })],
+    })],
   token: [
     validate({
       validator: "required",
       message: "Token is required"
-  })],
+    })],
 }
 
 
