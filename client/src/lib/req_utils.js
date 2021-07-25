@@ -1,5 +1,4 @@
 import { amp, browser, dev, prerendering } from '$app/env';
-const API_URL = import.meta.env.API_URL;
 
 export function getLocalStorage(key) {
   try {
@@ -25,11 +24,8 @@ export function setLocalStorage(key, value) {
 }
 
 function makeUrl(url) {
-  if (dev) {
-    url = 'http://192.168.111.3:4000/dev' + url
-  } else {
-    url = 'api.' + process.env.DOMAIN + url
-  }
+  url = import.meta.env.VITE_PUBLIC_BASE_PATH + url
+
   return url
 }
 
@@ -77,7 +73,6 @@ export async function postServer(url, body) {
 
 export async function post(url, body) {
   url = makeUrl(url)
-  console.log('post:', url)
 
   let customError = false
   try {
@@ -106,14 +101,14 @@ export async function post(url, body) {
           return {errors:[]}
         }
       } catch(err) {
-        console.log('ERROR:', err)
+        // console.log('ERROR:', err)
         throw err
       }
     }
 
     return res.json()
   } catch (err) {
-    console.log(err)
+    console.log('POST ERROR:', err)
     throw customError ? err : {id: '', message: 'unknown error'}
   }
 }
@@ -165,10 +160,35 @@ export const uploadFileToS3 = (presignedPostData, file) => {
     formData.append("file", file);
     const xhr = new XMLHttpRequest();
     xhr.open("POST", presignedPostData.url, true);
-    xhr.send(formData);
-    xhr.onload = function() {
-      this.status === 204 ? resolve() : reject(this.responseText);
+    xhr.onload = function () {
+      if (this.status >= 200 && this.status < 300) {
+        resolve(xhr.response);
+      } else {
+        if (xhr.responseText.includes('maximum allowed size')) {
+          reject({
+            status: this.status,
+            statusText: 'File too large.'
+          });
+        }
+        reject({
+          status: this.status,
+          statusText: xhr.statusText
+        });
+      }
     };
+    xhr.onerror = function () {
+      if (xhr.responseText.includes('maximum allowed size')) {
+        reject({
+          status: this.status,
+          statusText: 'File too large.'
+        });
+      }
+      reject({
+        status: this.status,
+        statusText: xhr.statusText
+      });
+    };
+    xhr.send(formData);
   });
 };
 
