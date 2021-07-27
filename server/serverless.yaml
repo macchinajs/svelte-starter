@@ -17,6 +17,20 @@ provider:
   runtime: nodejs14.x
   # stage: dev
   region: us-east-1
+  # CHANGE fpaboim-fabo TO YOUR BUCKET NAME
+  iamRoleStatements:
+    - Effect: "Allow"
+      Action:
+        - "s3:PutObject"
+      Resource: arn:aws:s3:::fpaboim-fabo/*
+    - Effect: "Allow"
+      Action:
+        - "s3:PutObjectAcl"
+      Resource: arn:aws:s3:::fpaboim-fabo/*
+    - Effect: "Allow"
+      Action:
+        - "s3:ListBucket"
+      Resource: arn:aws:s3:::fpaboim-fabo
 
 plugins:
   - serverless-dotenv-plugin
