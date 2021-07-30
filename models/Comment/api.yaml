@@ -1,15 +1,16 @@
-count: true
-delete:
-  auth: 
-    - role: ROLES.ADMIN
-find: true
-findone: true
-create:
-  login: true
-updateone:
-  login: true
-  auth:
-    - role: ROLES.USER
-      owner: from
-    - role: ROLES.EDITOR
+endpoints:
+  count: true
+  delete:
+    auth:
+      - role: ROLES.ADMIN
+  find: true
+  findone: true
+  create:
+    login: true
+  updateone:
+    login: true
+    auth:
+      - role: ROLES.USER
+        owner: from
+      - role: ROLES.EDITOR
 

@@ -1,4 +1,5 @@
-signS3:
-  login: true
-  method: signS3
-  middlewares: [apiLimiter]
+endpoints:
+  signS3:
+    login: true
+    method: signS3
+    middlewares: [apiLimiter]
