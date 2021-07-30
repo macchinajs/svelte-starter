@@ -14,3 +14,4 @@ const fabo_options = {
 const startApp = makeHandler(router, [setupPassport], fabo_options)
 
 export {startApp}
+

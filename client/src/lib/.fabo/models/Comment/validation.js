@@ -9,10 +9,18 @@ export default {
     validate({
       validator: "isLength",
       arguments: [3,500],
-      message: "Title should be between {ARGS[0]} and {ARGS[1]} characters"
+      message: "Comment should be between {ARGS[0]} and {ARGS[1]} characters"
       }), validate({
       validator: "required",
       message: "Title is required."
+    })],
+  author: [
+    validate({
+      validator: "required"
+    })],
+  post: [
+    validate({
+      validator: "required"
     })],
 }
 
