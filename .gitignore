@@ -4,6 +4,7 @@
 /fabo/.shared/*
 /client/.fabo/*
 /server/.fabo/*
+/.fabo/*
 *.log*
 *.swp
 *.lock

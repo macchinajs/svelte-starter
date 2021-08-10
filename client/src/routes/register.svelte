@@ -3,7 +3,7 @@
 </script>
 
 <script>
-  import Register from '$lib/Auth/register.svelte'
+  import Register from '$lib/auth/register.svelte'
 </script>
 
 <svelte:head>

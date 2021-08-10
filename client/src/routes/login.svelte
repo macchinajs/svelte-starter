@@ -3,7 +3,7 @@
 </script>
 
 <script>
-  import Login from "../lib/Auth/login.svelte"
+  import Login from "$lib/auth/login.svelte"
 </script>
 
 <svelte:head>
