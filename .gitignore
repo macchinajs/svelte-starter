@@ -3,6 +3,7 @@
 **/node_modules/*
 /fabo/.shared/*
 /client/.fabo/*
+/admin/*
 /server/.fabo/*
 /.fabo/*
 *.log*
