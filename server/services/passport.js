@@ -1,7 +1,7 @@
 import passportJWT from 'passport-jwt';
 import passport from "passport"
 
-import User from '../.fabo/models/User'
+import User from '../.fabo/models/User/index.js'
 
 
 const setupPassport = (app) => {

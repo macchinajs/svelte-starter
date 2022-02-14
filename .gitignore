@@ -5,6 +5,7 @@
 /client/.fabo/*
 /admin/*
 /server/.fabo/*
+/server/.dist/*
 /.fabo/*
 *.log*
 *.swp

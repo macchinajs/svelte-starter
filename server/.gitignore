@@ -5,6 +5,7 @@
 /db/logs/*
 /.serverless/*
 /.fabo/*
+/.dist/*
 /.webpack/*
 *.log*
 *.wt

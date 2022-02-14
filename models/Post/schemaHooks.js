@@ -1,6 +1,6 @@
 import bcrypt from 'bcryptjs'
 import slugify from 'slugify'
-import S3 from "aws-sdk/clients/s3"
+import S3 from "aws-sdk/clients/s3.js"
 
 const s3 = new S3();
 

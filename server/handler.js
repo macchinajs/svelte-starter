@@ -1,4 +1,4 @@
-import {makeHandler} from 'fabo/packages/server-core'
+import {makeHandler} from 'fabo/packages/server-core/index.js'
 import setupPassport from './services/passport.js'
 import router from './.fabo/router.js'
 
@@ -13,5 +13,5 @@ const fabo_options = {
 
 const startApp = makeHandler(router, [setupPassport], fabo_options)
 
-export {startApp}
+export default startApp
 

@@ -34,12 +34,17 @@ provider:
 
 plugins:
   - serverless-dotenv-plugin
-  - serverless-webpack
   - serverless-offline
 
 functions:
   app:
-    handler: handler.startApp
+    handler: bundle.startApp
+    externals:
+      report: .dist/node-externals-report.json
+    package:
+      patterns:
+        - "!./**"
+        - ./.dist/bundle.js
     # events:
     #   - http: ANY /
     #   - http: 'ANY {proxy+}'
@@ -74,14 +79,10 @@ functions:
             allowCredentials: true
 
 custom:
+  config: rollup.config.js
   apiGatewayThrottling:
     maxRequestsPerSecond: 1000
     maxConcurrentRequests: 500
-  webpack:
-    webpackConfig: './webpack.config.js' # Name of webpack configuration file
-    includeModules: true # Node modules configuration for packaging
-    packager: 'npm' # Packager that will be used to package your external modules
-    # excludeFiles: src/**/*.test.js # Provide a glob for files to ignore
   serverless-offline:
     # noPrependStageInUrl: true
     # httpsProtocol: "dev-certs"
