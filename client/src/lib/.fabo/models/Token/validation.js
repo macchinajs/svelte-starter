@@ -5,16 +5,22 @@ import '$lib/.fabo/shared/lib/extendValidators.js'
 // Token validation schema
 ///////////////////////////////////////////////////////////////////////////////
 export default {
-  userId: [
-    validate({
+  userId: {
+    required: true,
+    validations: [
+      validate({
       validator: "required",
       message: "Id is required"
     })],
-  token: [
-    validate({
+  },
+  token: {
+    required: true,
+    validations: [
+      validate({
       validator: "required",
       message: "Token is required"
     })],
+  },
 }
 
 

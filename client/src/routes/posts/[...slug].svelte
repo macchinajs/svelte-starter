@@ -1,6 +1,6 @@
 <script context="module">
   import { browser, dev } from '$app/env';
-  import { post } from '$lib/req_utils.js'
+  import { get } from '$lib/req_utils.js'
   import dayjs from "dayjs";
   import RelativeTime from "dayjs/plugin/relativeTime";
   dayjs.extend(RelativeTime);
@@ -13,7 +13,7 @@
     const titleSlug = slug.split('/')[1]
 
     const url = `/post/findone?author=${username}&slug=${titleSlug}`
-    const res = await post(url)
+    const res = await get(url)
 
     console.log("RES2:", res)
 

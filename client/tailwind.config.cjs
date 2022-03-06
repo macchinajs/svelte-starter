@@ -12,6 +12,6 @@ module.exports = {
     extend: {},
   },
 
-  plugins: [],
+  plugins: [require("daisyui")],
   content: ["./src/**/*.{html,js,svelte,ts}"],
 };

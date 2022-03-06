@@ -19,7 +19,6 @@
     </div>
     <Toast/>
   </div>
-  <Footer/>
 </main>
 
 <style>

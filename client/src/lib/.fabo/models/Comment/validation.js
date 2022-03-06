@@ -5,8 +5,10 @@ import '$lib/.fabo/shared/lib/extendValidators.js'
 // Comment validation schema
 ///////////////////////////////////////////////////////////////////////////////
 export default {
-  body: [
-    validate({
+  body: {
+    required: true,
+    validations: [
+      validate({
       validator: "isLength",
       arguments: [3,500],
       message: "Comment should be between {ARGS[0]} and {ARGS[1]} characters"
@@ -14,14 +16,21 @@ export default {
       validator: "required",
       message: "Title is required."
     })],
-  author: [
-    validate({
+  },
+  author: {
+    required: true,
+    validations: [
+      validate({
       validator: "required"
     })],
-  post: [
-    validate({
+  },
+  post: {
+    required: true,
+    validations: [
+      validate({
       validator: "required"
     })],
+  },
 }
 
 

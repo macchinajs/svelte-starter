@@ -1,6 +1,6 @@
 <script context="module">
   import { browser, dev } from '$app/env';
-  import { post } from '$lib/req_utils.js'
+  import { get } from '$lib/req_utils.js'
   import dayjs from "dayjs";
   import RelativeTime from "dayjs/plugin/relativeTime";
   dayjs.extend(RelativeTime);
@@ -8,7 +8,7 @@
   export const prerender = true
 
   export async function load({ params, fetch, session, context }) {
-    const res = await post('/post/find')
+    const res = await get('/post/find')
     console.log('posts:', res)
 
     if (res) {

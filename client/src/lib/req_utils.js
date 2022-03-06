@@ -101,7 +101,7 @@ export async function post(url, body) {
           return {errors:[]}
         }
       } catch(err) {
-        // console.log('ERROR:', err)
+        console.log('ERROR:', err, url)
         throw err
       }
     }
@@ -128,7 +128,6 @@ export async function get(url) {
     const res = await fetch(url, {
       headers
     })
-    console.log('res:', res)
 
     if (!res.ok) {
       console.log("POST ERROR", res)
