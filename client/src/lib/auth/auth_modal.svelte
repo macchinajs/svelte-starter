@@ -18,7 +18,7 @@
   <title>Home</title>
 </svelte:head>
 
-<div class="absolute top-0 left-0 h-screen w-screen flex flex-col justify-center items-center z-50 bg-brand-100 bg-opacity-70" on:click|self={() => hidemodal()}>
+<div class="absolute top-0 left-0 h-screen w-screen flex flex-col justify-center items-center z-50 bg-opacity-70" on:click|self={() => hidemodal()}>
   <div class="pt-6 sm:p-12">
     <div class="mx-auto max-w-md px-6 py-6 bg-white border-0 shadow-lg sm:rounded-3xl">
       <div class="w-full flex flex-row justify-end">

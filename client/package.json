@@ -25,7 +25,6 @@
     "@fontsource/fira-mono": "^4.5.3",
     "@lukeed/uuid": "^2.0.0",
     "cookie": "^0.4.2",
-    "daisyui": "^2.6.0",
     "dayjs": "^1.10.8",
     "mongoose-validator": "^2.1.0",
     "svelte-local-storage-store": "^0.2.6"
