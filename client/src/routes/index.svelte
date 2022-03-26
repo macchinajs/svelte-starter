@@ -40,7 +40,7 @@
         <div class="font-semibold text-md">
           <a sveltekit:prefetch href="/posts/{post.author}/{post.slug}">
             {post.title}
-            <img class="h-36 rounded-lg" src="https://fpaboim-fabo.s3.amazonaws.com/{post.image}" alt="">
+            <img class="h-36 rounded-lg" src="https://fpaboim-macchina.s3.amazonaws.com/{post.image}" alt="">
           </a>
         </div>
         <div class="text-sm pt-2">

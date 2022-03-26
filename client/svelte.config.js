@@ -17,7 +17,7 @@ const config = {
       // },
       resolve: {
         alias: {
-          $fabo: path.resolve("./src/lib/.fabo/"),
+          $macchina: path.resolve("./src/lib/.macchina/"),
         },
       },
     },

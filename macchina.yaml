@@ -1,4 +1,4 @@
-fabo:
+macchina:
   server:
     export: './server'
   client:

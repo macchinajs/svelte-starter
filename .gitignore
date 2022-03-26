@@ -1,12 +1,12 @@
 .DS_Store
 /node_modules/*
 **/node_modules/*
-/fabo/.shared/*
-/client/.fabo/*
+/macchina/.shared/*
+/client/.macchina/*
 /admin/*
-/server/.fabo/*
+/server/.macchina/*
 /server/.dist/*
-/.fabo/*
+/.macchina/*
 *.log*
 *.swp
 *.lock

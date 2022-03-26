@@ -1,4 +1,4 @@
-schema:
+Token:
   userId:
     type: Id
     required: [true, 'Id is required']

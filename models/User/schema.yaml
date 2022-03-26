@@ -1,6 +1,7 @@
 imports:
   uniqid: uniqid
-schema:
+
+User:
   username:
     type     : String
     unique   : false

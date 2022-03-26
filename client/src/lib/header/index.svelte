@@ -13,7 +13,7 @@
   <div class="w-full max-w-screen-lg flex-row items-center justify-center border-black border-t-2 py-3">
     <div class="flex flex-row justify-between">
       <a sveltekit:prefetch href="/">
-        <button class="text-lg lowercase">fabo.js</button>
+        <button class="text-lg lowercase">macchinajs</button>
       </a>
       <div class="flex flex-row">
         <a sveltekit:prefetch href="/" class="px-3 transition duration-300 ease-in-out hover:text-yellow-500" on:click={() => goto('/')}>posts</a>

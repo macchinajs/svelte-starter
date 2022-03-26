@@ -6,7 +6,7 @@ export const createPresignedPost = (key, contentType) => {
   const s3 = new S3();
   const params = {
     Expires: 60,
-    Bucket: "fpaboim-fabo",
+    Bucket: "fpaboim-macchina",
     Conditions: [["content-length-range", 100, 2*1024*1024]], // 100Byte - 2MB
     Fields: {
       "Content-Type": contentType,

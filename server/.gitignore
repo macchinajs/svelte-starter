@@ -4,7 +4,7 @@
 /logs/*
 /db/logs/*
 /.serverless/*
-/.fabo/*
+/.macchina/*
 /.dist/*
 /.webpack/*
 *.log*

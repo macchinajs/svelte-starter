@@ -1,4 +1,4 @@
-schema:
+Post:
   title:
     type  : String
     unique: false

@@ -1,6 +1,6 @@
-app: fabo-back
-service: fabo-api
-name: fabo-api
+app: macchina-back
+service: macchina-api
+name: macchina-api
 useDotenv: true
 
 package:
@@ -17,20 +17,20 @@ provider:
   runtime: nodejs14.x
   # stage: dev
   region: us-east-1
-  # CHANGE fpaboim-fabo TO YOUR BUCKET NAME
+  # CHANGE fpaboim-macchina TO YOUR BUCKET NAME
   iamRoleStatements:
     - Effect: "Allow"
       Action:
         - "s3:PutObject"
-      Resource: arn:aws:s3:::fpaboim-fabo/*
+      Resource: arn:aws:s3:::fpaboim-macchina/*
     - Effect: "Allow"
       Action:
         - "s3:PutObjectAcl"
-      Resource: arn:aws:s3:::fpaboim-fabo/*
+      Resource: arn:aws:s3:::fpaboim-macchina/*
     - Effect: "Allow"
       Action:
         - "s3:ListBucket"
-      Resource: arn:aws:s3:::fpaboim-fabo
+      Resource: arn:aws:s3:::fpaboim-macchina
 
 plugins:
   - serverless-dotenv-plugin

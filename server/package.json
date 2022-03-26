@@ -1,8 +1,8 @@
 {
-  "name": "fabo_backend",
-  "version": "0.0.2",
+  "name": "macchina_backend",
+  "version": "0.0.1",
   "private": true,
-  "description": "fabo_backend API server",
+  "description": "Macchina API server",
   "main": "./.dist/bundle.js",
   "type": "module",
   "scripts": {
@@ -16,27 +16,35 @@
     "deploy": "sls deploy --stage prod --verbose",
     "poststart": "mongo admin --eval 'db.shutdownServer()'"
   },
+  "nodemonConfig": {
+    "watch": [
+      "./*",
+      "./.macchina/*"
+    ],
+    "ext": ".js, .json, .yaml"
+  },
   "keywords": [],
   "author": "Francisco Aboim",
   "license": "CC",
   "dependencies": {
     "@flybondi/serverless-rollup-plugin": "^1.4.0",
+    "@macchina/server-core": "link:../../macchina/packages/server-core",
     "@vendia/serverless-express": "^4.5.4",
     "api-query-params": "^5.3.1",
-    "aws-sdk": "^2.1087.0",
+    "aws-sdk": "^2.1100.0",
     "bcryptjs": "^2.4.3",
     "cross-env": "^7.0.3",
     "dotenv": "^10.0.0",
     "jsonwebtoken": "^8.5.1",
     "mime": "^2.6.0",
-    "mongoose": "^6.2.4",
+    "mongoose": "^6.2.8",
     "mongoose-validator": "github:fpaboim/mongoose-validator",
     "passport": "^0.4.1",
     "passport-jwt": "^4.0.0",
-    "rollup": "^2.69.2",
-    "serverless": "^3.7.1",
+    "rollup": "^2.70.1",
+    "serverless": "^3.10.0",
     "serverless-api-gateway-throttling": "^1.2.2",
-    "serverless-externals-plugin": "^0.2.6",
+    "serverless-externals-plugin": "^0.2.7",
     "slugify": "^1.6.5",
     "uniqid": "^5.4.0"
   },

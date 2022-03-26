@@ -1,7 +1,7 @@
-import C      from "../.fabo/shared/constants.js"
+import C      from "../.macchina/shared/constants.js"
 import _ from 'lodash'
 import faker from 'faker/locale/pt_BR.js'
-import User from '../.fabo/models/User'
+import User from '../.macchina/models/User'
 faker.seed(42)
 
 

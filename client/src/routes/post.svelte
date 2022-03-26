@@ -7,7 +7,7 @@
 <script>
   import { goto } from "$app/navigation"
   import { post, uploadFileToS3 } from '$lib/req_utils'
-  import postValidators from '$fabo/models/Post/validation.js'
+  import postValidators from '$macchina/models/Post/validation.js'
   import { getErrors } from '$lib/form_utils.js'
 
   let resetInput = () => {
