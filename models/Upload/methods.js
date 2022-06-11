@@ -1,6 +1,5 @@
 import S3 from "aws-sdk/clients/s3.js"
 import uniqid from "uniqid"
-import mime from "mime"
 
 export const createPresignedPost = (key, contentType) => {
   const s3 = new S3();

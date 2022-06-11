@@ -5,6 +5,7 @@
   "type": "module",
   "devDependencies": {
     "@macchina/cli": "link:../macchina/packages/cli",
+    "@rollup/plugin-replace": "^4.0.0",
     "concurrently": "^6.5.1",
     "wait-on": "^6.0.1"
   },
@@ -46,8 +47,6 @@
     "ext": ".js, .json, .yaml, .hbs"
   },
   "dependencies": {
-    "chalk": "^4.1.2",
-    "express-rate-limit": "^5.5.1",
     "nodemon": "^2.0.15"
   }
 }
